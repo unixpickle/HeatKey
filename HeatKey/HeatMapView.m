@@ -14,34 +14,13 @@
 @property (readwrite) CGFloat maxCount;
 
 - (CGPoint)drawKey:(NSString *)representation point:(CGPoint)point;
+- (NSString *)keyboardLayoutString;
+- (NSIndexSet *)usedKeyCodes;
 - (void)recomputeMaxCount;
 
 @end
 
 @implementation HeatMapView
-
-+ (NSString *)keyboardLayoutString {
-  return @"F53 F122 F120 F99 F118 F96 F97 F98 F100 F101 F109 F103 F111 F\n"
-         @"R50 R18 R19 R20 R21 R23 R22 R26 R28 R25 R29 R27 R24 D51\n"
-         @"T48 R12 R13 R14 R15 R17 R16 R32 R34 R31 R35 R33 R30 R42\n"
-         @"C R0 R1 R2 R3 R5 R4 R38 R40 R37 R41 R39 E36\n"
-         @"S R6 R7 R8 R9 R11 R45 R46 R43 R47 R44 S\n"
-         @"_S _R _R P49 _R _R _R _S";
-}
-
-+ (NSIndexSet *)usedKeyCodes {
-  NSMutableIndexSet * set = [NSMutableIndexSet indexSet];
-  NSString * layout = [self keyboardLayoutString];
-  for (NSString * line in [layout componentsSeparatedByString:@"\n"]) {
-    for (NSString * key in [line componentsSeparatedByString:@" "]) {
-      if (key.length == 1 || [key hasPrefix:@"_"]) {
-        continue;
-      }
-      [set addIndex:(NSUInteger)[[key substringFromIndex:1] intValue]];
-    }
-  }
-  return set;
-}
 
 - (BOOL)isFlipped {
   return YES;
@@ -70,7 +49,7 @@
   }
   
   CGPoint point = startPoint;
-  NSString * layout = [self.class keyboardLayoutString];
+  NSString * layout = [self keyboardLayoutString];
   for (NSString * line in [layout componentsSeparatedByString:@"\n"]) {
     for (NSString * key in [line componentsSeparatedByString:@" "]) {
       point = [self drawKey:key point:point];
@@ -122,8 +101,35 @@
   return CGPointMake(point.x + keyWidth + self.spaceSize, point.y);
 }
 
+- (NSString *)keyboardLayoutString {
+  id base = @"F53 F122 F120 F99 F118 F96 F97 F98 F100 F101 F109 F103 F111 F\n"
+            @"R50 R18 R19 R20 R21 R23 R22 R26 R28 R25 R29 R27 R24 D51\n"
+            @"T48 R12 R13 R14 R15 R17 R16 R32 R34 R31 R35 R33 R30 R42\n"
+            @"C R0 R1 R2 R3 R5 R4 R38 R40 R37 R41 R39 E36\n"
+            @"S R6 R7 R8 R9 R11 R45 R46 R43 R47 R44 S\n";
+  if (self.showSpaceBar) {
+    return [base stringByAppendingString:@"_S _R _R P49 _R _R _R _S"];
+  } else {
+    return [base stringByAppendingString:@"_S _R _R P _R _R _R _S"];
+  }
+}
+
+- (NSIndexSet *)usedKeyCodes {
+  NSMutableIndexSet * set = [NSMutableIndexSet indexSet];
+  NSString * layout = [self keyboardLayoutString];
+  for (NSString * line in [layout componentsSeparatedByString:@"\n"]) {
+    for (NSString * key in [line componentsSeparatedByString:@" "]) {
+      if (key.length == 1 || [key hasPrefix:@"_"]) {
+        continue;
+      }
+      [set addIndex:(NSUInteger)[[key substringFromIndex:1] intValue]];
+    }
+  }
+  return set;
+}
+
 - (void)recomputeMaxCount {
-  NSIndexSet * keys = [self.class usedKeyCodes];
+  NSIndexSet * keys = [self usedKeyCodes];
   int mods = self.modifiers;
   unsigned long long maxCount = [self.profile maximumCountsForKeys:keys
                                                          modifiers:mods];

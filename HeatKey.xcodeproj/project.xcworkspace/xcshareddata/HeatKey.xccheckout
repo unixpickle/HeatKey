@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>AE331B4F-5EC4-4338-8DD4-6E81F1AEF99F</string>
+	<key>IDESourceControlProjectName</key>
+	<string>HeatKey</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>D8F9804801B0DA4095DA089813C61CB602B091C4</key>
+		<string>https://github.com/unixpickle/HeatKey.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>HeatKey.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>D8F9804801B0DA4095DA089813C61CB602B091C4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/unixpickle/HeatKey.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>D8F9804801B0DA4095DA089813C61CB602B091C4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>D8F9804801B0DA4095DA089813C61CB602B091C4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>HeatKey</string>
+		</dict>
+	</array>
+</dict>
+</plist>

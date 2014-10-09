@@ -85,6 +85,7 @@
   BOOL command = (self.commandCheck.state != 0);
   BOOL option = (self.optionCheck.state != 0);
   BOOL control = (self.controlCheck.state != 0);
+  self.heatMapView.showSpaceBar = (self.spaceCheck.state != 0);
   self.heatMapView.modifiers = [Profile modifiersMaskWithShift:shift
                                                        command:command
                                                         option:option
@@ -112,7 +113,7 @@
   [self.heatMapView setNeedsDisplay:YES];
   for (NSView * view in @[self.shiftCheck, self.commandCheck, self.optionCheck,
                           self.controlCheck, self.heatMapView,
-                          self.recordButton]) {
+                          self.recordButton, self.spaceCheck]) {
     [view setHidden:NO];
   }
   self.headerLabel.stringValue = @"Profile Information";
@@ -127,7 +128,7 @@
 - (void)hideProfileInfo {
   for (NSView * view in @[self.shiftCheck, self.commandCheck, self.optionCheck,
                           self.controlCheck, self.heatMapView,
-                          self.recordButton]) {
+                          self.recordButton, self.spaceCheck]) {
     [view setHidden:YES];
   }
   self.headerLabel.stringValue = @"No Profile Selected";

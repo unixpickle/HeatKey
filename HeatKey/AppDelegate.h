@@ -24,6 +24,7 @@
 @property (nonatomic, weak) IBOutlet NSButton * commandCheck;
 @property (nonatomic, weak) IBOutlet NSButton * optionCheck;
 @property (nonatomic, weak) IBOutlet NSButton * controlCheck;
+@property (nonatomic, weak) IBOutlet NSButton * spaceCheck;
 @property (nonatomic, weak) IBOutlet NSButton * recordButton;
 
 @property (readonly) Profile * currentProfile;

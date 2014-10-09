@@ -13,8 +13,6 @@
 
 @property (nonatomic, strong) Profile * profile;
 @property (readwrite) int modifiers;
-
-+ (NSString *)keyboardLayoutString;
-+ (NSIndexSet *)usedKeyCodes;
+@property (readwrite) BOOL showSpaceBar;
 
 @end

@@ -55,16 +55,16 @@
   
   [self recomputeMaxCount];
   
-  CGPoint startPoint = CGPointZero;
-  if (self.frame.size.width * (spacesTall / spacesWide) >
-      self.frame.size.height) {
+  CGPoint startPoint = CGPointMake(1, 1);
+  CGRect border = CGRectInset(NSRectToCGRect(self.frame), 1, 1);
+  if (border.size.width * (spacesTall / spacesWide) > border.size.height) {
     // The view is too wide
-    self.spaceSize = self.frame.size.height / spacesTall;
+    self.spaceSize = border.size.height / spacesTall;
     startPoint.x = (self.frame.size.width - (self.spaceSize * spacesWide)) /
                    2.0;
   } else {
     // The view is too tall
-    self.spaceSize = self.frame.size.width / 83.0;
+    self.spaceSize = border.size.width / 83.0;
     startPoint.y = (self.frame.size.height - (self.spaceSize * spacesTall)) /
                    2.0;
   }
@@ -96,10 +96,10 @@
   }
   CGFloat keyWidth = [widths[[representation substringToIndex:1]] floatValue];
   CGFloat keyHeight = self.spaceSize * 4;
-  NSRect rect = NSMakeRect(point.x,
-                           point.y,
-                           keyWidth,
-                           keyHeight);
+  NSRect rect = NSMakeRect(round(point.x),
+                           round(point.y),
+                           round(keyWidth),
+                           round(keyHeight));
   NSBezierPath * bezier = [NSBezierPath
                            bezierPathWithRoundedRect:rect
                                              xRadius:(self.spaceSize / 2.0)

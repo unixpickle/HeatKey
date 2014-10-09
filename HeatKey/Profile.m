@@ -8,7 +8,17 @@
 
 #import "Profile.h"
 
+static NSNumber * _ProfileKey(int key, int modifiers) {
+  return @(key | (modifiers << 16));
+}
+
 @implementation Profile
+
++ (int)modifiersMaskWithShift:(BOOL)shift command:(BOOL)command
+                       option:(BOOL)option control:(BOOL)control {
+  return (shift ? 1 : 0) | (command ? 2 : 0) | (option ? 4 : 0) |
+         (control ? 8 : 0);
+}
 
 - (id)initWithName:(NSString *)name {
   if ((self = [super init])) {
@@ -27,21 +37,23 @@
   return self;
 }
 
-- (void)addKeyPress:(int)key {
-  [self addKeyPresses:key count:1];
+- (void)addKeyPress:(int)key modifiers:(int)flags {
+  [self addKeyPresses:key modifiers:flags count:1];
 }
 
-- (void)addKeyPresses:(int)key count:(unsigned long long)count {
-  NSNumber * number = self.keyCounts[@(key)];
+- (void)addKeyPresses:(int)key modifiers:(int)flags
+                count:(unsigned long long)count {
+  NSNumber * k = _ProfileKey(key, flags);
+  NSNumber * number = self.keyCounts[k];
   if (!number) {
-    self.keyCounts[@(key)] = @(count);
+    self.keyCounts[k] = @(count);
   } else {
-    self.keyCounts[@(key)] = @(number.unsignedLongLongValue + count);
+    self.keyCounts[k] = @(number.unsignedLongLongValue + count);
   }
 }
 
-- (unsigned long long)keyCountsForKey:(int)key {
-  return [self.keyCounts[@(key)] unsignedLongLongValue];
+- (unsigned long long)keyCountsForKey:(int)key modifiers:(int)modifiers {
+  return [self.keyCounts[_ProfileKey(key, modifiers)] unsignedLongLongValue];
 }
 
 - (void)encodeWithCoder:(NSCoder *)aCoder {

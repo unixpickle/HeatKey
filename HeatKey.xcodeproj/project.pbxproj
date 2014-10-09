@@ -13,6 +13,7 @@
 		FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */; };
 		FAAE7E0519E6D6D2007F2E87 /* KeyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */; };
 		FAAE7E0819E6D997007F2E87 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0719E6D997007F2E87 /* Profile.m */; };
+		FAAE7E0B19E6E4CF007F2E87 /* HeatMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,8 @@
 		FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLogger.m; sourceTree = "<group>"; };
 		FAAE7E0619E6D997007F2E87 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		FAAE7E0719E6D997007F2E87 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		FAAE7E0919E6E4CF007F2E87 /* HeatMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeatMapView.h; sourceTree = "<group>"; };
+		FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeatMapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +70,8 @@
 				FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */,
 				FAAE7E0619E6D997007F2E87 /* Profile.h */,
 				FAAE7E0719E6D997007F2E87 /* Profile.m */,
+				FAAE7E0919E6E4CF007F2E87 /* HeatMapView.h */,
+				FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */,
 				FAAE7DE319E6D6C7007F2E87 /* Supporting Files */,
 			);
 			path = HeatKey;
@@ -154,6 +159,7 @@
 				FAAE7E0819E6D997007F2E87 /* Profile.m in Sources */,
 				FAAE7E0519E6D6D2007F2E87 /* KeyLogger.m in Sources */,
 				FAAE7DE719E6D6C7007F2E87 /* AppDelegate.m in Sources */,
+				FAAE7E0B19E6E4CF007F2E87 /* HeatMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

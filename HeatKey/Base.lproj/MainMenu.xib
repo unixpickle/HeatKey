@@ -14,7 +14,13 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="Voe-Tx-rLC" customClass="AppDelegate">
             <connections>
+                <outlet property="commandCheck" destination="HtZ-Aa-yTS" id="5dx-qW-gVG"/>
+                <outlet property="controlCheck" destination="qIY-Nk-t9e" id="RbL-ZR-BBv"/>
+                <outlet property="headerLabel" destination="PBj-pW-7wK" id="YCs-Mz-dH8"/>
+                <outlet property="heatMapView" destination="O6e-Hj-TNW" id="cMl-cR-eTQ"/>
+                <outlet property="optionCheck" destination="2Oe-rF-r7E" id="ymU-Yt-jpk"/>
                 <outlet property="removeButton" destination="I0K-tI-OyM" id="4iu-lW-dVS"/>
+                <outlet property="shiftCheck" destination="EOq-be-yne" id="Wbl-Zo-tzm"/>
                 <outlet property="tableView" destination="KzH-dy-Vdo" id="ZkG-gZ-KbM"/>
                 <outlet property="window" destination="QvC-M9-y7g" id="gIp-Ho-8D9"/>
             </connections>
@@ -672,10 +678,10 @@
         <window title="HeatKey" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="335" y="390" width="480" height="360"/>
+            <rect key="contentRect" x="335" y="390" width="551" height="360"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="360"/>
+                <rect key="frame" x="0.0" y="0.0" width="551" height="360"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LoC-NY-pLl">
@@ -756,17 +762,103 @@
                             <action selector="addPressed:" target="Voe-Tx-rLC" id="rpg-e1-cO6"/>
                         </connections>
                     </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="EOq-be-yne">
+                        <rect key="frame" x="249" y="29" width="51" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="47" id="j3V-J7-Tq9"/>
+                            <constraint firstAttribute="height" constant="14" id="j9L-8N-3u9"/>
+                        </constraints>
+                        <buttonCell key="cell" type="check" title="Shift" bezelStyle="regularSquare" imagePosition="left" inset="2" id="0lK-T6-hNs">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="modifierCheckboxChanged:" target="Voe-Tx-rLC" id="W3F-CK-v2z"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="qIY-Nk-t9e">
+                        <rect key="frame" x="464" y="29" width="69" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="FmQ-n6-aSo"/>
+                            <constraint firstAttribute="height" constant="14" id="vLH-m5-S8z"/>
+                        </constraints>
+                        <buttonCell key="cell" type="check" title="Control" bezelStyle="regularSquare" imagePosition="left" inset="2" id="M2o-oU-AVd">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="modifierCheckboxChanged:" target="Voe-Tx-rLC" id="gUE-Zm-BHP"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-rF-r7E">
+                        <rect key="frame" x="395" y="29" width="65" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="83H-uE-dpJ"/>
+                            <constraint firstAttribute="width" constant="61" id="F1w-qJ-aG8"/>
+                        </constraints>
+                        <buttonCell key="cell" type="check" title="Option" bezelStyle="regularSquare" imagePosition="left" inset="2" id="3PK-fz-esI">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="modifierCheckboxChanged:" target="Voe-Tx-rLC" id="MnG-bq-slO"/>
+                        </connections>
+                    </button>
+                    <button translatesAutoresizingMaskIntoConstraints="NO" id="HtZ-Aa-yTS">
+                        <rect key="frame" x="304" y="29" width="87" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="83" id="fES-pB-r0L"/>
+                            <constraint firstAttribute="height" constant="14" id="nbK-E0-jqw"/>
+                        </constraints>
+                        <buttonCell key="cell" type="check" title="Command" bezelStyle="regularSquare" imagePosition="left" inset="2" id="5T8-Xh-ZZj">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="modifierCheckboxChanged:" target="Voe-Tx-rLC" id="kLD-gE-gQM"/>
+                        </connections>
+                    </button>
+                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="O6e-Hj-TNW" customClass="HeatMapView">
+                        <rect key="frame" x="214" y="53" width="317" height="262"/>
+                    </customView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-pW-7wK">
+                        <rect key="frame" x="212" y="323" width="321" height="17"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="17" id="QVz-5e-vkf"/>
+                        </constraints>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Profile Information" id="Cwy-Il-zb9">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
                 <constraints>
                     <constraint firstItem="LoC-NY-pLl" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="8Cq-BR-WpX"/>
+                    <constraint firstItem="qIY-Nk-t9e" firstAttribute="leading" secondItem="2Oe-rF-r7E" secondAttribute="trailing" constant="8" id="9Re-QT-Eau"/>
+                    <constraint firstItem="EOq-be-yne" firstAttribute="top" secondItem="O6e-Hj-TNW" secondAttribute="bottom" constant="8" id="B02-9v-dS9"/>
+                    <constraint firstItem="HtZ-Aa-yTS" firstAttribute="top" secondItem="O6e-Hj-TNW" secondAttribute="bottom" constant="8" id="Bui-ar-dDg"/>
+                    <constraint firstAttribute="trailing" secondItem="O6e-Hj-TNW" secondAttribute="trailing" constant="20" id="Cia-Xr-wz1"/>
                     <constraint firstAttribute="bottom" secondItem="lxS-XD-53H" secondAttribute="bottom" constant="20" id="Gri-js-wQp"/>
+                    <constraint firstItem="2Oe-rF-r7E" firstAttribute="top" secondItem="O6e-Hj-TNW" secondAttribute="bottom" constant="8" id="JnC-L8-reQ"/>
+                    <constraint firstItem="qIY-Nk-t9e" firstAttribute="top" secondItem="O6e-Hj-TNW" secondAttribute="bottom" constant="8" id="Nw8-rz-A1n"/>
+                    <constraint firstAttribute="bottom" secondItem="O6e-Hj-TNW" secondAttribute="bottom" constant="53" id="PHs-Kp-XD9"/>
                     <constraint firstItem="lxS-XD-53H" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="181" id="QZX-Xx-4TY"/>
                     <constraint firstItem="LoC-NY-pLl" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="20" id="Qy9-Xl-VbP"/>
+                    <constraint firstAttribute="trailing" secondItem="qIY-Nk-t9e" secondAttribute="trailing" constant="20" id="Z1n-FZ-zLV"/>
+                    <constraint firstItem="PBj-pW-7wK" firstAttribute="top" secondItem="EiT-Mj-1SZ" secondAttribute="top" constant="20" id="cZ3-IT-tDM"/>
+                    <constraint firstItem="O6e-Hj-TNW" firstAttribute="top" secondItem="PBj-pW-7wK" secondAttribute="bottom" constant="8" id="fSm-wj-ans"/>
+                    <constraint firstItem="O6e-Hj-TNW" firstAttribute="leading" secondItem="LoC-NY-pLl" secondAttribute="trailing" constant="8" id="hUC-Vc-ONS"/>
+                    <constraint firstItem="HtZ-Aa-yTS" firstAttribute="leading" secondItem="EOq-be-yne" secondAttribute="trailing" constant="8" id="hdv-mD-Wj6"/>
                     <constraint firstItem="I0K-tI-OyM" firstAttribute="leading" secondItem="EiT-Mj-1SZ" secondAttribute="leading" constant="148" id="jie-eX-kZK"/>
                     <constraint firstAttribute="bottom" secondItem="LoC-NY-pLl" secondAttribute="bottom" constant="53" id="lva-Et-zv7"/>
+                    <constraint firstItem="PBj-pW-7wK" firstAttribute="leading" secondItem="LoC-NY-pLl" secondAttribute="trailing" constant="8" id="nIO-yh-J7A"/>
                     <constraint firstAttribute="bottom" secondItem="I0K-tI-OyM" secondAttribute="bottom" constant="20" id="raN-0Q-YJc"/>
+                    <constraint firstItem="2Oe-rF-r7E" firstAttribute="leading" secondItem="HtZ-Aa-yTS" secondAttribute="trailing" constant="8" id="sBD-KQ-uCl"/>
+                    <constraint firstAttribute="trailing" secondItem="PBj-pW-7wK" secondAttribute="trailing" constant="20" id="xsv-d8-RQv"/>
                 </constraints>
             </view>
+            <point key="canvasLocation" x="187.5" y="-29"/>
         </window>
     </objects>
 </document>

@@ -29,17 +29,15 @@
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-  // Insert code here to initialize your application
-}
-
-- (void)applicationWillTerminate:(NSNotification *)aNotification {
-  // Insert code here to tear down your application
+  [self hideProfileInfo];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:
         (NSApplication *)sender {
   return YES;
 }
+
+#pragma mark - UI Actions -
 
 - (IBAction)addPressed:(id)sender {
   [self.profiles addObject:[self createNewProfile]];
@@ -53,6 +51,39 @@
   NSAssert(index >= 0 && index < self.profiles.count, @"No profile selected");
   [self.profiles removeObjectAtIndex:self.tableView.selectedRow];
   [self.tableView reloadData];
+}
+
+- (IBAction)modifierCheckboxChanged:(id)sender {
+  BOOL shift = (self.shiftCheck.state != 0);
+  BOOL command = (self.commandCheck.state != 0);
+  BOOL option = (self.optionCheck.state != 0);
+  BOOL control = (self.controlCheck.state != 0);
+  self.heatMapView.flags = [Profile modifiersMaskWithShift:shift command:command
+                                                    option:option
+                                                   control:control];
+  [self.heatMapView setNeedsDisplay:YES];
+}
+
+#pragma mark - Profile Info Views -
+
+- (void)showProfileInfo:(Profile *)profile {
+  self.heatMapView.profile = profile;
+  [self.heatMapView setNeedsDisplay:YES];
+  for (NSView * view in @[self.shiftCheck, self.commandCheck, self.optionCheck,
+                          self.controlCheck, self.heatMapView]) {
+    [view setHidden:NO];
+  }
+  self.headerLabel.stringValue = @"Profile Information";
+  self.removeButton.enabled = YES;
+}
+
+- (void)hideProfileInfo {
+  for (NSView * view in @[self.shiftCheck, self.commandCheck, self.optionCheck,
+                          self.controlCheck, self.heatMapView]) {
+    [view setHidden:YES];
+  }
+  self.headerLabel.stringValue = @"No Profile Selected";
+  self.removeButton.enabled = NO;
 }
 
 #pragma mark - Table View -
@@ -76,9 +107,9 @@
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
   if (self.tableView.selectedRow < 0) {
-    self.removeButton.enabled = NO;
+    [self hideProfileInfo];
   } else {
-    self.removeButton.enabled = YES;
+    [self showProfileInfo:self.profiles[self.tableView.selectedRow]];
   }
 }
 

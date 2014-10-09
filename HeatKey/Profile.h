@@ -13,10 +13,14 @@
 @property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) NSMutableDictionary * keyCounts;
 
++ (int)modifiersMaskWithShift:(BOOL)shift command:(BOOL)command
+                       option:(BOOL)option control:(BOOL)control;
+
 - (id)initWithName:(NSString *)name;
 
-- (void)addKeyPress:(int)key;
-- (void)addKeyPresses:(int)key count:(unsigned long long)count;
-- (unsigned long long)keyCountsForKey:(int)key;
+- (void)addKeyPress:(int)key modifiers:(int)flags;
+- (void)addKeyPresses:(int)key modifiers:(int)flags
+                count:(unsigned long long)count;
+- (unsigned long long)keyCountsForKey:(int)key modifiers:(int)modifiers;
 
 @end

@@ -7,9 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "Profile.h"
 
-@interface AppDelegate : NSObject <NSApplicationDelegate>
+@interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource,
+                                   NSTableViewDelegate>
 
+@property (nonatomic, weak) IBOutlet NSTableView * tableView;
+@property (nonatomic, weak) IBOutlet NSButton * removeButton;
+@property (nonatomic, weak) IBOutlet NSWindow * window;
+
+- (IBAction)addPressed:(id)sender;
+- (IBAction)removePressed:(id)sender;
 
 @end
 

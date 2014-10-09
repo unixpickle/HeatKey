@@ -12,6 +12,8 @@
 		FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */; };
 		FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */; };
 		FAAE7DFA19E6D6C7007F2E87 /* HeatKeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */; };
+		FAAE7E0519E6D6D2007F2E87 /* KeyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */; };
+		FAAE7E0819E6D997007F2E87 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0719E6D997007F2E87 /* Profile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +37,10 @@
 		FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeatKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAAE7DF819E6D6C7007F2E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeatKeyTests.m; sourceTree = "<group>"; };
+		FAAE7E0319E6D6D2007F2E87 /* KeyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyLogger.h; sourceTree = "<group>"; };
+		FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLogger.m; sourceTree = "<group>"; };
+		FAAE7E0619E6D997007F2E87 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		FAAE7E0719E6D997007F2E87 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +86,10 @@
 				FAAE7DE619E6D6C7007F2E87 /* AppDelegate.m */,
 				FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */,
 				FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */,
+				FAAE7E0319E6D6D2007F2E87 /* KeyLogger.h */,
+				FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */,
+				FAAE7E0619E6D997007F2E87 /* Profile.h */,
+				FAAE7E0719E6D997007F2E87 /* Profile.m */,
 				FAAE7DE319E6D6C7007F2E87 /* Supporting Files */,
 			);
 			path = HeatKey;
@@ -211,6 +221,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAE7DE919E6D6C7007F2E87 /* main.m in Sources */,
+				FAAE7E0819E6D997007F2E87 /* Profile.m in Sources */,
+				FAAE7E0519E6D6D2007F2E87 /* KeyLogger.m in Sources */,
 				FAAE7DE719E6D6C7007F2E87 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

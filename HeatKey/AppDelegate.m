@@ -233,7 +233,6 @@
 #pragma mark - Daemon -
 
 - (void)keyPressed:(int)key modifiers:(int)modifiers {
-  NSLog(@"%d %d", key, modifiers);
   if (!self.recording) return;
   [self.recording addKeyPress:key modifiers:modifiers];
   if (self.recording == self.currentProfile) {

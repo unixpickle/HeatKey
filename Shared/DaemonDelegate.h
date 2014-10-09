@@ -1,5 +1,5 @@
 //
-//  Daemon.h
+//  DaemonDelegate.h
 //  HeatKey
 //
 //  Created by Alex Nichol on 10/9/14.
@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DaemonService.h"
 
-id<DaemonService> LaunchDaemonService();
+@protocol DaemonDelegate
+
+- (void)keyPressed:(int)key modifiers:(int)modifiers;
+- (BOOL)ping;
+
+@end

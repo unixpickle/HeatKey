@@ -14,14 +14,23 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
 
 @implementation KeyLogger
 
-- (BOOL)beginLogging {
+- (id)init {
+  if ((self = [super init])) {
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self
+                                   selector:@selector(pingDelegate)
+                                   userInfo:nil repeats:YES];
+  }
+  return self;
+}
+
+- (void)start {
   if (!eventTap) {
     eventTap = CGEventTapCreate(kCGHIDEventTap, kCGHeadInsertEventTap,
                                 kCGEventTapOptionDefault,
                                 CGEventMaskBit(kCGEventKeyDown),
                                 _EventCallback, (__bridge void *)self);
     if (!eventTap) {
-      return NO;
+      return;
     }
     runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
                                                   eventTap, 0);
@@ -29,14 +38,31 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
                        kCFRunLoopCommonModes);
   }
   CGEventTapEnable(eventTap, true);
-  return YES;
 }
 
-- (void)stopLogging {
+- (void)stop {
   if (!eventTap) {
     return;
   }
   CGEventTapEnable(eventTap, false);
+}
+
+- (void)kill {
+  [self.connection invalidate];
+  self.connection = nil;
+  
+  // Give the connection time to shutdown properly
+  dispatch_async(dispatch_get_main_queue(), ^{
+    exit(0);
+  });
+}
+
+- (void)died:(NSNotification *)note {
+  exit(0);
+}
+
+- (void)pingDelegate {
+  [self.delegate ping];
 }
 
 - (void)dealloc {
@@ -54,7 +80,7 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
 static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
                                  CGEventRef event, void * refcon) {
   KeyLogger * logger = (__bridge KeyLogger *)refcon;
-  if (logger.callback) {
+  if (logger.delegate) {
     CGEventFlags flags = CGEventGetFlags(event);
     BOOL shift = ((flags & kCGEventFlagMaskShift) != 0);
     BOOL command = ((flags & kCGEventFlagMaskCommand) != 0);
@@ -65,7 +91,7 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
     int64_t value = CGEventGetIntegerValueField(event,
                                                 kCGKeyboardEventKeycode);
     dispatch_async(dispatch_get_main_queue(), ^{
-      logger.callback((int)value, modifiers);
+      [logger.delegate keyPressed:(int)value modifiers:modifiers];
     });
   }
   return event;

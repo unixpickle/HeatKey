@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray * profiles;
 @property (nonatomic, strong) Profile * recording;
-@property (nonatomic, strong) KeyLogger * logger;
+@property (nonatomic, strong) id<DaemonService> daemonService;
 
 - (void)showProfileInfo;
 - (void)hideProfileInfo;
@@ -32,19 +32,23 @@
 - (id)init {
   if ((self = [super init])) {
     // TODO: here, attempt to decode [profiles] from a file.
-    __weak AppDelegate * weakSelf = self;
     self.profiles = [[NSMutableArray alloc] init];
-    self.logger = [[KeyLogger alloc] init];
-    self.logger.callback = ^(int code, int modifiers) {
-      [weakSelf.recording addKeyPress:code modifiers:modifiers];
-      [weakSelf.heatMapView setNeedsDisplay:YES];
-    };
   }
   return self;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [self hideProfileInfo];
+  self.daemonService = LaunchDaemonService();
+  if (!self.daemonService) {
+    NSLog(@"failed to launch daemon service");
+    exit(1);
+  }
+  [self.daemonService setDelegate:self];
+}
+
+- (void)applicationWillTerminate:(NSNotification *)notification {
+  [self.daemonService kill];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:
@@ -195,19 +199,28 @@
 }
 
 - (void)startRecording {
-  if (![self.logger beginLogging]) {
-    return;
-  }
+  [self.daemonService start];
   self.recording = self.currentProfile;
   self.recordButton.title = @"Stop Recording";
 }
 
 - (void)stopRecording {
-  [self.logger stopLogging];
+  [self.daemonService stop];
   if (self.recording == self.currentProfile) {
     self.recordButton.title = @"Start Recording";
   }
   self.recording = nil;
+}
+
+#pragma mark - Daemon -
+
+- (void)keyPressed:(int)key modifiers:(int)modifiers {
+  if (!self.recording) return;
+  NSLog(@"key pressed %d %d", key, modifiers);
+}
+
+- (BOOL)ping {
+  return YES;
 }
 
 @end

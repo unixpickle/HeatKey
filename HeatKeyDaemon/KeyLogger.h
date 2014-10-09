@@ -19,7 +19,6 @@
 
 - (void)start;
 - (void)stop;
-- (void)kill;
 
 - (void)died:(NSNotification *)note;
 - (void)pingDelegate;

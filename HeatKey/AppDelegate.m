@@ -25,30 +25,32 @@
 - (void)startRecording;
 - (void)stopRecording;
 
+- (NSString *)savedDataPath;
+- (void)save;
+
 @end
 
 @implementation AppDelegate
 
 - (id)init {
   if ((self = [super init])) {
-    // TODO: here, attempt to decode [profiles] from a file.
-    self.profiles = [[NSMutableArray alloc] init];
+    NSString * path = [self savedDataPath];
+    NSArray * saved = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    if (saved) {
+      self.profiles = [[NSMutableArray alloc] initWithArray:saved];
+    } else {
+      self.profiles = [[NSMutableArray alloc] init];
+    }
   }
   return self;
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
   [self hideProfileInfo];
-  self.daemonService = LaunchDaemonService();
-  if (!self.daemonService) {
-    NSLog(@"failed to launch daemon service");
-    exit(1);
-  }
-  [self.daemonService setDelegate:self];
 }
 
 - (void)applicationWillTerminate:(NSNotification *)notification {
-  [self.daemonService kill];
+  [self save];
 }
 
 - (BOOL)applicationShouldTerminateAfterLastWindowClosed:
@@ -148,6 +150,11 @@
         forTableColumn:(NSTableColumn *)tableColumn
               row:(NSInteger)row {
   NSAssert(row < self.profiles.count, @"Invalid row count");
+  NSAssert([object isKindOfClass:[NSString class]], @"Invalid object value");
+  if ([self hasProfileNamed:object]) {
+    [self.tableView reloadData];
+    return;
+  }
   [(Profile *)self.profiles[row] setName:(NSString *)object];
 }
 
@@ -199,6 +206,15 @@
 }
 
 - (void)startRecording {
+  if (!self.daemonService) {
+    self.daemonService = LaunchDaemonService();
+    if (!self.daemonService) {
+      NSRunAlertPanel(@"Error", @"Failed to launch keyboard logger.",
+                      @"OK", nil, nil);
+      return;
+    }
+    [self.daemonService setDelegate:self];
+  }
   [self.daemonService start];
   self.recording = self.currentProfile;
   self.recordButton.title = @"Stop Recording";
@@ -210,17 +226,32 @@
     self.recordButton.title = @"Start Recording";
   }
   self.recording = nil;
+  [self save];
 }
 
 #pragma mark - Daemon -
 
 - (void)keyPressed:(int)key modifiers:(int)modifiers {
   if (!self.recording) return;
-  NSLog(@"key pressed %d %d", key, modifiers);
+  [self.recording addKeyPress:key modifiers:modifiers];
 }
 
 - (BOOL)ping {
   return YES;
+}
+
+#pragma mark - Saving -
+
+- (NSString *)savedDataPath {
+  NSArray * dirs = NSSearchPathForDirectoriesInDomains(
+      NSApplicationSupportDirectory, NSLocalDomainMask, YES);
+  NSString * appSupport = [NSHomeDirectory() stringByAppendingPathComponent:
+                           dirs[0]];
+  return [appSupport stringByAppendingPathComponent:@"profiles"];
+}
+
+- (void)save {
+  [NSKeyedArchiver archiveRootObject:self.profiles toFile:[self savedDataPath]];
 }
 
 @end

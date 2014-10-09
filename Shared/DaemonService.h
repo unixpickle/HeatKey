@@ -13,6 +13,5 @@
 - (void)setDelegate:(id<DaemonDelegate>)delegate;
 - (void)start;
 - (void)stop;
-- (void)kill;
 
 @end

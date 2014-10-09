@@ -47,16 +47,6 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
   CGEventTapEnable(eventTap, false);
 }
 
-- (void)kill {
-  [self.connection invalidate];
-  self.connection = nil;
-  
-  // Give the connection time to shutdown properly
-  dispatch_async(dispatch_get_main_queue(), ^{
-    exit(0);
-  });
-}
-
 - (void)died:(NSNotification *)note {
   exit(0);
 }

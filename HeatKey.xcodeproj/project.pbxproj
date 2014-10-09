@@ -11,20 +11,9 @@
 		FAAE7DE919E6D6C7007F2E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7DE819E6D6C7007F2E87 /* main.m */; };
 		FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */; };
 		FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */; };
-		FAAE7DFA19E6D6C7007F2E87 /* HeatKeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */; };
 		FAAE7E0519E6D6D2007F2E87 /* KeyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */; };
 		FAAE7E0819E6D997007F2E87 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0719E6D997007F2E87 /* Profile.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FAAE7DF419E6D6C7007F2E87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAAE7DD819E6D6C7007F2E87 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAAE7DDF19E6D6C7007F2E87;
-			remoteInfo = HeatKey;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeatKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -34,9 +23,6 @@
 		FAAE7DE819E6D6C7007F2E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FAAE7DED19E6D6C7007F2E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeatKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAAE7DF819E6D6C7007F2E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeatKeyTests.m; sourceTree = "<group>"; };
 		FAAE7E0319E6D6D2007F2E87 /* KeyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyLogger.h; sourceTree = "<group>"; };
 		FAAE7E0419E6D6D2007F2E87 /* KeyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLogger.m; sourceTree = "<group>"; };
 		FAAE7E0619E6D997007F2E87 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
@@ -51,13 +37,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAAE7DF019E6D6C7007F2E87 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -65,7 +44,6 @@
 			isa = PBXGroup;
 			children = (
 				FAAE7DE219E6D6C7007F2E87 /* HeatKey */,
-				FAAE7DF619E6D6C7007F2E87 /* HeatKeyTests */,
 				FAAE7DE119E6D6C7007F2E87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -74,7 +52,6 @@
 			isa = PBXGroup;
 			children = (
 				FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */,
-				FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,23 +81,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FAAE7DF619E6D6C7007F2E87 /* HeatKeyTests */ = {
-			isa = PBXGroup;
-			children = (
-				FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */,
-				FAAE7DF719E6D6C7007F2E87 /* Supporting Files */,
-			);
-			path = HeatKeyTests;
-			sourceTree = "<group>";
-		};
-		FAAE7DF719E6D6C7007F2E87 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				FAAE7DF819E6D6C7007F2E87 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,24 +101,6 @@
 			productReference = FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */;
 			productType = "com.apple.product-type.application";
 		};
-		FAAE7DF219E6D6C7007F2E87 /* HeatKeyTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FAAE7E0019E6D6C7007F2E87 /* Build configuration list for PBXNativeTarget "HeatKeyTests" */;
-			buildPhases = (
-				FAAE7DEF19E6D6C7007F2E87 /* Sources */,
-				FAAE7DF019E6D6C7007F2E87 /* Frameworks */,
-				FAAE7DF119E6D6C7007F2E87 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FAAE7DF519E6D6C7007F2E87 /* PBXTargetDependency */,
-			);
-			name = HeatKeyTests;
-			productName = HeatKeyTests;
-			productReference = FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -170,10 +112,6 @@
 				TargetAttributes = {
 					FAAE7DDF19E6D6C7007F2E87 = {
 						CreatedOnToolsVersion = 6.1;
-					};
-					FAAE7DF219E6D6C7007F2E87 = {
-						CreatedOnToolsVersion = 6.1;
-						TestTargetID = FAAE7DDF19E6D6C7007F2E87;
 					};
 				};
 			};
@@ -191,7 +129,6 @@
 			projectRoot = "";
 			targets = (
 				FAAE7DDF19E6D6C7007F2E87 /* HeatKey */,
-				FAAE7DF219E6D6C7007F2E87 /* HeatKeyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -203,13 +140,6 @@
 			files = (
 				FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */,
 				FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAAE7DF119E6D6C7007F2E87 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,23 +157,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAAE7DEF19E6D6C7007F2E87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAAE7DFA19E6D6C7007F2E87 /* HeatKeyTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FAAE7DF519E6D6C7007F2E87 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAAE7DDF19E6D6C7007F2E87 /* HeatKey */;
-			targetProxy = FAAE7DF419E6D6C7007F2E87 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */ = {
@@ -355,42 +269,6 @@
 			};
 			name = Release;
 		};
-		FAAE7E0119E6D6C7007F2E87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HeatKeyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeatKey.app/Contents/MacOS/HeatKey";
-			};
-			name = Debug;
-		};
-		FAAE7E0219E6D6C7007F2E87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = HeatKeyTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeatKey.app/Contents/MacOS/HeatKey";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -408,14 +286,6 @@
 			buildConfigurations = (
 				FAAE7DFE19E6D6C7007F2E87 /* Debug */,
 				FAAE7DFF19E6D6C7007F2E87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		FAAE7E0019E6D6C7007F2E87 /* Build configuration list for PBXNativeTarget "HeatKeyTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FAAE7E0119E6D6C7007F2E87 /* Debug */,
-				FAAE7E0219E6D6C7007F2E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

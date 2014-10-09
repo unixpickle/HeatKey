@@ -56,6 +56,16 @@ static NSNumber * _ProfileKey(int key, int modifiers) {
   return [self.keyCounts[_ProfileKey(key, modifiers)] unsignedLongLongValue];
 }
 
+- (unsigned long long)maximumCount {
+  unsigned long long result = 0;
+  for (NSNumber * value in [self.keyCounts allValues]) {
+    if (value.unsignedLongLongValue > result) {
+      result = value.unsignedLongLongValue;
+    }
+  }
+  return result;
+}
+
 - (void)encodeWithCoder:(NSCoder *)aCoder {
   [aCoder encodeObject:self.name forKey:@"name"];
   [aCoder encodeObject:self.keyCounts forKey:@"keyCounts"];

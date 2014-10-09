@@ -22,5 +22,6 @@
 - (void)addKeyPresses:(int)key modifiers:(int)flags
                 count:(unsigned long long)count;
 - (unsigned long long)keyCountsForKey:(int)key modifiers:(int)modifiers;
+- (unsigned long long)maximumCount;
 
 @end

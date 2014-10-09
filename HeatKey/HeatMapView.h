@@ -12,6 +12,6 @@
 @interface HeatMapView : NSView
 
 @property (nonatomic, strong) Profile * profile;
-@property (readwrite) int flags;
+@property (readwrite) int modifiers;
 
 @end

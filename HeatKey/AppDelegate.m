@@ -86,9 +86,10 @@
   BOOL command = (self.commandCheck.state != 0);
   BOOL option = (self.optionCheck.state != 0);
   BOOL control = (self.controlCheck.state != 0);
-  self.heatMapView.flags = [Profile modifiersMaskWithShift:shift command:command
-                                                    option:option
-                                                   control:control];
+  self.heatMapView.modifiers = [Profile modifiersMaskWithShift:shift
+                                                       command:command
+                                                        option:option
+                                                       control:control];
   [self.heatMapView setNeedsDisplay:YES];
 }
 
@@ -234,6 +235,9 @@
 - (void)keyPressed:(int)key modifiers:(int)modifiers {
   if (!self.recording) return;
   [self.recording addKeyPress:key modifiers:modifiers];
+  if (self.recording == self.currentProfile) {
+    [self.heatMapView setNeedsDisplay:YES];
+  }
 }
 
 - (BOOL)ping {

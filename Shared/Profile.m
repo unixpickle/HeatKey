@@ -56,15 +56,14 @@ static NSNumber * _ProfileKey(int key, int modifiers) {
   return [self.keyCounts[_ProfileKey(key, modifiers)] unsignedLongLongValue];
 }
 
-- (unsigned long long)maximumCount:(int)modifiers {
-  unsigned long long result = 0;
-  for (NSNumber * key in [self.keyCounts allKeys]) {
-    if (([key intValue] & 0xff0000) != (modifiers << 16)) {
-      continue;
-    }
+- (unsigned long long)maximumCountsForKeys:(NSIndexSet *)keys
+                                 modifiers:(int)modifiers {
+  __block unsigned long long result = 0;
+  [keys enumerateIndexesUsingBlock:^(NSUInteger idx, BOOL *stop) {
+    NSNumber * key = _ProfileKey((int)idx, modifiers);
     unsigned long long value = [self.keyCounts[key] unsignedLongLongValue];
     result = MAX(result, value);
-  }
+  }];
   return result;
 }
 

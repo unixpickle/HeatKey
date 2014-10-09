@@ -69,6 +69,8 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
 
 static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
                                  CGEventRef event, void * refcon) {
+  if (type != kCGEventKeyDown) return event;
+  
   KeyLogger * logger = (__bridge KeyLogger *)refcon;
   if (logger.delegate) {
     CGEventFlags flags = CGEventGetFlags(event);

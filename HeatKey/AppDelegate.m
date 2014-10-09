@@ -63,8 +63,7 @@
   if (row < 0) {
     return nil;
   }
-  NSAssert(row < self.profiles.count,
-           @"Invalid profile index");
+  NSAssert(row < self.profiles.count, @"Invalid profile index");
   return self.profiles[row];
 }
 

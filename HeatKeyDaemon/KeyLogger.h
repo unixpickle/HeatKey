@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-typedef void (^ KeyLoggerCallback)(BOOL down, int keyCode);
+typedef void (^ KeyLoggerCallback)(int keyCode, int modifiers);
 
 @interface KeyLogger : NSObject {
   CFRunLoopSourceRef runLoopSource;

@@ -7,6 +7,7 @@
 //
 
 #import "KeyLogger.h"
+#import "Profile.h"
 
 static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
                                  CGEventRef event, void * refcon);
@@ -17,9 +18,7 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
   if (!eventTap) {
     eventTap = CGEventTapCreate(kCGHIDEventTap, kCGHeadInsertEventTap,
                                 kCGEventTapOptionDefault,
-                                CGEventMaskBit(kCGEventKeyUp) |
-                                CGEventMaskBit(kCGEventKeyDown) |
-                                CGEventMaskBit(NX_SYSDEFINED),
+                                CGEventMaskBit(kCGEventKeyDown),
                                 _EventCallback, (__bridge void *)self);
     if (!eventTap) {
       return NO;
@@ -56,11 +55,17 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
                                  CGEventRef event, void * refcon) {
   KeyLogger * logger = (__bridge KeyLogger *)refcon;
   if (logger.callback) {
+    CGEventFlags flags = CGEventGetFlags(event);
+    BOOL shift = ((flags & kCGEventFlagMaskShift) != 0);
+    BOOL command = ((flags & kCGEventFlagMaskCommand) != 0);
+    BOOL option = ((flags & kCGEventFlagMaskAlternate) != 0);
+    BOOL control = ((flags & kCGEventFlagMaskControl) != 0);
+    int modifiers = [Profile modifiersMaskWithShift:shift command:command
+                                             option:option control:control];
     int64_t value = CGEventGetIntegerValueField(event,
                                                 kCGKeyboardEventKeycode);
-    BOOL down = type == kCGEventKeyDown;
     dispatch_async(dispatch_get_main_queue(), ^{
-      logger.callback(down, (int)value);
+      logger.callback((int)value, modifiers);
     });
   }
   return event;

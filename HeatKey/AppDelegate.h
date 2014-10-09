@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "HeatMapView.h"
+#import "KeyLogger.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource,
                                    NSTableViewDelegate>
@@ -22,13 +23,14 @@
 @property (nonatomic, weak) IBOutlet NSButton * commandCheck;
 @property (nonatomic, weak) IBOutlet NSButton * optionCheck;
 @property (nonatomic, weak) IBOutlet NSButton * controlCheck;
+@property (nonatomic, weak) IBOutlet NSButton * recordButton;
+
+@property (readonly) Profile * currentProfile;
 
 - (IBAction)addPressed:(id)sender;
 - (IBAction)removePressed:(id)sender;
 - (IBAction)modifierCheckboxChanged:(id)sender;
-
-- (void)showProfileInfo:(Profile *)profile;
-- (void)hideProfileInfo;
+- (IBAction)recordPressed:(id)sender;
 
 @end
 

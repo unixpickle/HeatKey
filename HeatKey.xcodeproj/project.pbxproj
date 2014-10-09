@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FAAE7DE719E6D6C7007F2E87 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7DE619E6D6C7007F2E87 /* AppDelegate.m */; };
+		FAAE7DE919E6D6C7007F2E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7DE819E6D6C7007F2E87 /* main.m */; };
+		FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */; };
+		FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */; };
+		FAAE7DFA19E6D6C7007F2E87 /* HeatKeyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FAAE7DF419E6D6C7007F2E87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FAAE7DD819E6D6C7007F2E87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FAAE7DDF19E6D6C7007F2E87;
+			remoteInfo = HeatKey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeatKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAAE7DE419E6D6C7007F2E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAE7DE519E6D6C7007F2E87 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		FAAE7DE619E6D6C7007F2E87 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		FAAE7DE819E6D6C7007F2E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FAAE7DED19E6D6C7007F2E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeatKeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAAE7DF819E6D6C7007F2E87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HeatKeyTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAAE7DDD19E6D6C7007F2E87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAAE7DF019E6D6C7007F2E87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FAAE7DD719E6D6C7007F2E87 = {
+			isa = PBXGroup;
+			children = (
+				FAAE7DE219E6D6C7007F2E87 /* HeatKey */,
+				FAAE7DF619E6D6C7007F2E87 /* HeatKeyTests */,
+				FAAE7DE119E6D6C7007F2E87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAAE7DE119E6D6C7007F2E87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */,
+				FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAAE7DE219E6D6C7007F2E87 /* HeatKey */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE7DE519E6D6C7007F2E87 /* AppDelegate.h */,
+				FAAE7DE619E6D6C7007F2E87 /* AppDelegate.m */,
+				FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */,
+				FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */,
+				FAAE7DE319E6D6C7007F2E87 /* Supporting Files */,
+			);
+			path = HeatKey;
+			sourceTree = "<group>";
+		};
+		FAAE7DE319E6D6C7007F2E87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE7DE419E6D6C7007F2E87 /* Info.plist */,
+				FAAE7DE819E6D6C7007F2E87 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAAE7DF619E6D6C7007F2E87 /* HeatKeyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE7DF919E6D6C7007F2E87 /* HeatKeyTests.m */,
+				FAAE7DF719E6D6C7007F2E87 /* Supporting Files */,
+			);
+			path = HeatKeyTests;
+			sourceTree = "<group>";
+		};
+		FAAE7DF719E6D6C7007F2E87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FAAE7DF819E6D6C7007F2E87 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAAE7DDF19E6D6C7007F2E87 /* HeatKey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAAE7DFD19E6D6C7007F2E87 /* Build configuration list for PBXNativeTarget "HeatKey" */;
+			buildPhases = (
+				FAAE7DDC19E6D6C7007F2E87 /* Sources */,
+				FAAE7DDD19E6D6C7007F2E87 /* Frameworks */,
+				FAAE7DDE19E6D6C7007F2E87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HeatKey;
+			productName = HeatKey;
+			productReference = FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FAAE7DF219E6D6C7007F2E87 /* HeatKeyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAAE7E0019E6D6C7007F2E87 /* Build configuration list for PBXNativeTarget "HeatKeyTests" */;
+			buildPhases = (
+				FAAE7DEF19E6D6C7007F2E87 /* Sources */,
+				FAAE7DF019E6D6C7007F2E87 /* Frameworks */,
+				FAAE7DF119E6D6C7007F2E87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAAE7DF519E6D6C7007F2E87 /* PBXTargetDependency */,
+			);
+			name = HeatKeyTests;
+			productName = HeatKeyTests;
+			productReference = FAAE7DF319E6D6C7007F2E87 /* HeatKeyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAAE7DD819E6D6C7007F2E87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "Alex Nichol";
+				TargetAttributes = {
+					FAAE7DDF19E6D6C7007F2E87 = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					FAAE7DF219E6D6C7007F2E87 = {
+						CreatedOnToolsVersion = 6.1;
+						TestTargetID = FAAE7DDF19E6D6C7007F2E87;
+					};
+				};
+			};
+			buildConfigurationList = FAAE7DDB19E6D6C7007F2E87 /* Build configuration list for PBXProject "HeatKey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAAE7DD719E6D6C7007F2E87;
+			productRefGroup = FAAE7DE119E6D6C7007F2E87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAAE7DDF19E6D6C7007F2E87 /* HeatKey */,
+				FAAE7DF219E6D6C7007F2E87 /* HeatKeyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAAE7DDE19E6D6C7007F2E87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */,
+				FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAAE7DF119E6D6C7007F2E87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAAE7DDC19E6D6C7007F2E87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAE7DE919E6D6C7007F2E87 /* main.m in Sources */,
+				FAAE7DE719E6D6C7007F2E87 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAAE7DEF19E6D6C7007F2E87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAAE7DFA19E6D6C7007F2E87 /* HeatKeyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAAE7DF519E6D6C7007F2E87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FAAE7DDF19E6D6C7007F2E87 /* HeatKey */;
+			targetProxy = FAAE7DF419E6D6C7007F2E87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAAE7DED19E6D6C7007F2E87 /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAAE7DFB19E6D6C7007F2E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FAAE7DFC19E6D6C7007F2E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FAAE7DFE19E6D6C7007F2E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeatKey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FAAE7DFF19E6D6C7007F2E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = HeatKey/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FAAE7E0119E6D6C7007F2E87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeatKeyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeatKey.app/Contents/MacOS/HeatKey";
+			};
+			name = Debug;
+		};
+		FAAE7E0219E6D6C7007F2E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = HeatKeyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/HeatKey.app/Contents/MacOS/HeatKey";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAAE7DDB19E6D6C7007F2E87 /* Build configuration list for PBXProject "HeatKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAE7DFB19E6D6C7007F2E87 /* Debug */,
+				FAAE7DFC19E6D6C7007F2E87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAAE7DFD19E6D6C7007F2E87 /* Build configuration list for PBXNativeTarget "HeatKey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAE7DFE19E6D6C7007F2E87 /* Debug */,
+				FAAE7DFF19E6D6C7007F2E87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FAAE7E0019E6D6C7007F2E87 /* Build configuration list for PBXNativeTarget "HeatKeyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAAE7E0119E6D6C7007F2E87 /* Debug */,
+				FAAE7E0219E6D6C7007F2E87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FAAE7DD819E6D6C7007F2E87 /* Project object */;
+}

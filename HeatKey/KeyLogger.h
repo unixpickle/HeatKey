@@ -7,21 +7,23 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "DaemonService.h"
 
-@interface KeyLogger : NSObject <DaemonService> {
+@protocol KeyLoggerDelegate
+
+- (void)keyPressed:(int)key modifiers:(int)modifiers;
+
+@end
+
+@interface KeyLogger : NSObject {
   CFRunLoopSourceRef runLoopSource;
   CFMachPortRef eventTap;
 }
 
 @property (nonatomic, strong) NSConnection * connection;
-@property (nonatomic, strong) id<DaemonDelegate> delegate;
+@property (nonatomic, strong) id<KeyLoggerDelegate> delegate;
 
-- (void)start;
+- (BOOL)start;
 - (void)stop;
-
-- (void)died:(NSNotification *)note;
-- (void)pingDelegate;
 
 - (void)dealloc;
 

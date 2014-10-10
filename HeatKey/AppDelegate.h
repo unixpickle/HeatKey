@@ -8,11 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 #import "HeatMapView.h"
-#import "Profile.h"
-#import "Daemon.h"
+#import "KeyLogger.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate, NSTableViewDataSource,
-                                   NSTableViewDelegate, DaemonDelegate>
+                                   NSTableViewDelegate, KeyLoggerDelegate>
 
 @property (nonatomic, weak) IBOutlet NSTableView * tableView;
 @property (nonatomic, weak) IBOutlet NSButton * removeButton;

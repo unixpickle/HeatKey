@@ -14,23 +14,26 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
 
 @implementation KeyLogger
 
-- (id)init {
-  if ((self = [super init])) {
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self
-                                   selector:@selector(pingDelegate)
-                                   userInfo:nil repeats:YES];
+- (BOOL)start {
+  // Request permission
+  NSAssert(AXIsProcessTrustedWithOptions != NULL, @"Missing important API.");
+  const void * keys[] = { kAXTrustedCheckOptionPrompt };
+  const void * values[] = { kCFBooleanTrue };
+  
+  CFDictionaryRef options = CFDictionaryCreate(kCFAllocatorDefault,
+      keys, values, sizeof(keys) / sizeof(*keys),
+      &kCFCopyStringDictionaryKeyCallBacks, &kCFTypeDictionaryValueCallBacks);
+  
+  if (!AXIsProcessTrustedWithOptions(options)) {
+    return NO;
   }
-  return self;
-}
-
-- (void)start {
   if (!eventTap) {
     eventTap = CGEventTapCreate(kCGHIDEventTap, kCGHeadInsertEventTap,
                                 kCGEventTapOptionDefault,
                                 CGEventMaskBit(kCGEventKeyDown),
                                 _EventCallback, (__bridge void *)self);
     if (!eventTap) {
-      return;
+      return NO;
     }
     runLoopSource = CFMachPortCreateRunLoopSource(kCFAllocatorDefault,
                                                   eventTap, 0);
@@ -38,6 +41,7 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
                        kCFRunLoopCommonModes);
   }
   CGEventTapEnable(eventTap, true);
+  return YES;
 }
 
 - (void)stop {
@@ -45,14 +49,6 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
     return;
   }
   CGEventTapEnable(eventTap, false);
-}
-
-- (void)died:(NSNotification *)note {
-  exit(0);
-}
-
-- (void)pingDelegate {
-  [self.delegate ping];
 }
 
 - (void)dealloc {

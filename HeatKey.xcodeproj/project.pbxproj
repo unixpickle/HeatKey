@@ -12,35 +12,9 @@
 		FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEA19E6D6C7007F2E87 /* Images.xcassets */; };
 		FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */; };
 		FAAE7E0B19E6E4CF007F2E87 /* HeatMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */; };
-		FAAE7E1319E6F483007F2E87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E1219E6F483007F2E87 /* main.m */; };
-		FAAE7E1A19E6F4AC007F2E87 /* KeyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E1919E6F4AC007F2E87 /* KeyLogger.m */; };
-		FAAE7E1D19E6F50B007F2E87 /* Daemon.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E1C19E6F50B007F2E87 /* Daemon.m */; };
-		FAAE7E2E19E6FF2A007F2E87 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E2D19E6FF2A007F2E87 /* Profile.m */; };
-		FAAE7E2F19E6FF2A007F2E87 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E2D19E6FF2A007F2E87 /* Profile.m */; };
-		FAAE7E3019E6FF39007F2E87 /* HeatKeyDaemon in Resources */ = {isa = PBXBuildFile; fileRef = FAAE7E1019E6F483007F2E87 /* HeatKeyDaemon */; };
+		FABADDB719E8778500DBC72A /* KeyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FABADDB619E8778500DBC72A /* KeyLogger.m */; };
+		FABADDBA19E877E500DBC72A /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FABADDB919E877E500DBC72A /* Profile.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		FAAE7E2919E6FE97007F2E87 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FAAE7DD819E6D6C7007F2E87 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FAAE7E0F19E6F483007F2E87;
-			remoteInfo = HeatKeyDaemon;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		FAAE7E0E19E6F483007F2E87 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HeatKey.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,27 +26,14 @@
 		FAAE7DED19E6D6C7007F2E87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		FAAE7E0919E6E4CF007F2E87 /* HeatMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeatMapView.h; sourceTree = "<group>"; };
 		FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeatMapView.m; sourceTree = "<group>"; };
-		FAAE7E1019E6F483007F2E87 /* HeatKeyDaemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HeatKeyDaemon; sourceTree = BUILT_PRODUCTS_DIR; };
-		FAAE7E1219E6F483007F2E87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		FAAE7E1819E6F4AC007F2E87 /* KeyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyLogger.h; sourceTree = "<group>"; };
-		FAAE7E1919E6F4AC007F2E87 /* KeyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLogger.m; sourceTree = "<group>"; };
-		FAAE7E1B19E6F50B007F2E87 /* Daemon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Daemon.h; sourceTree = "<group>"; };
-		FAAE7E1C19E6F50B007F2E87 /* Daemon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Daemon.m; sourceTree = "<group>"; };
-		FAAE7E1F19E6FAA1007F2E87 /* DaemonDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DaemonDelegate.h; sourceTree = "<group>"; };
-		FAAE7E2619E6FAF0007F2E87 /* DaemonService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DaemonService.h; sourceTree = "<group>"; };
-		FAAE7E2C19E6FF2A007F2E87 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
-		FAAE7E2D19E6FF2A007F2E87 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		FABADDB519E8778500DBC72A /* KeyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyLogger.h; sourceTree = "<group>"; };
+		FABADDB619E8778500DBC72A /* KeyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLogger.m; sourceTree = "<group>"; };
+		FABADDB819E877E500DBC72A /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		FABADDB919E877E500DBC72A /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FAAE7DDD19E6D6C7007F2E87 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FAAE7E0D19E6F483007F2E87 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -85,9 +46,7 @@
 		FAAE7DD719E6D6C7007F2E87 = {
 			isa = PBXGroup;
 			children = (
-				FAAE7E1E19E6FA93007F2E87 /* Shared */,
 				FAAE7DE219E6D6C7007F2E87 /* HeatKey */,
-				FAAE7E1119E6F483007F2E87 /* HeatKeyDaemon */,
 				FAAE7DE119E6D6C7007F2E87 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -96,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */,
-				FAAE7E1019E6F483007F2E87 /* HeatKeyDaemon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -110,8 +68,10 @@
 				FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */,
 				FAAE7E0919E6E4CF007F2E87 /* HeatMapView.h */,
 				FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */,
-				FAAE7E1B19E6F50B007F2E87 /* Daemon.h */,
-				FAAE7E1C19E6F50B007F2E87 /* Daemon.m */,
+				FABADDB519E8778500DBC72A /* KeyLogger.h */,
+				FABADDB619E8778500DBC72A /* KeyLogger.m */,
+				FABADDB819E877E500DBC72A /* Profile.h */,
+				FABADDB919E877E500DBC72A /* Profile.m */,
 				FAAE7DE319E6D6C7007F2E87 /* Supporting Files */,
 			);
 			path = HeatKey;
@@ -124,27 +84,6 @@
 				FAAE7DE819E6D6C7007F2E87 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		FAAE7E1119E6F483007F2E87 /* HeatKeyDaemon */ = {
-			isa = PBXGroup;
-			children = (
-				FAAE7E1819E6F4AC007F2E87 /* KeyLogger.h */,
-				FAAE7E1919E6F4AC007F2E87 /* KeyLogger.m */,
-				FAAE7E1219E6F483007F2E87 /* main.m */,
-			);
-			path = HeatKeyDaemon;
-			sourceTree = "<group>";
-		};
-		FAAE7E1E19E6FA93007F2E87 /* Shared */ = {
-			isa = PBXGroup;
-			children = (
-				FAAE7E2C19E6FF2A007F2E87 /* Profile.h */,
-				FAAE7E2D19E6FF2A007F2E87 /* Profile.m */,
-				FAAE7E1F19E6FAA1007F2E87 /* DaemonDelegate.h */,
-				FAAE7E2619E6FAF0007F2E87 /* DaemonService.h */,
-			);
-			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,29 +100,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				FAAE7E2A19E6FE97007F2E87 /* PBXTargetDependency */,
 			);
 			name = HeatKey;
 			productName = HeatKey;
 			productReference = FAAE7DE019E6D6C7007F2E87 /* HeatKey.app */;
 			productType = "com.apple.product-type.application";
-		};
-		FAAE7E0F19E6F483007F2E87 /* HeatKeyDaemon */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FAAE7E1419E6F483007F2E87 /* Build configuration list for PBXNativeTarget "HeatKeyDaemon" */;
-			buildPhases = (
-				FAAE7E0C19E6F483007F2E87 /* Sources */,
-				FAAE7E0D19E6F483007F2E87 /* Frameworks */,
-				FAAE7E0E19E6F483007F2E87 /* CopyFiles */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = HeatKeyDaemon;
-			productName = HeatKeyDaemon;
-			productReference = FAAE7E1019E6F483007F2E87 /* HeatKeyDaemon */;
-			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -195,9 +116,6 @@
 				ORGANIZATIONNAME = "Alex Nichol";
 				TargetAttributes = {
 					FAAE7DDF19E6D6C7007F2E87 = {
-						CreatedOnToolsVersion = 6.1;
-					};
-					FAAE7E0F19E6F483007F2E87 = {
 						CreatedOnToolsVersion = 6.1;
 					};
 				};
@@ -216,7 +134,6 @@
 			projectRoot = "";
 			targets = (
 				FAAE7DDF19E6D6C7007F2E87 /* HeatKey */,
-				FAAE7E0F19E6F483007F2E87 /* HeatKeyDaemon */,
 			);
 		};
 /* End PBXProject section */
@@ -228,7 +145,6 @@
 			files = (
 				FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */,
 				FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */,
-				FAAE7E3019E6FF39007F2E87 /* HeatKeyDaemon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,32 +156,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAAE7DE919E6D6C7007F2E87 /* main.m in Sources */,
-				FAAE7E2E19E6FF2A007F2E87 /* Profile.m in Sources */,
-				FAAE7E1D19E6F50B007F2E87 /* Daemon.m in Sources */,
+				FABADDBA19E877E500DBC72A /* Profile.m in Sources */,
+				FABADDB719E8778500DBC72A /* KeyLogger.m in Sources */,
 				FAAE7DE719E6D6C7007F2E87 /* AppDelegate.m in Sources */,
 				FAAE7E0B19E6E4CF007F2E87 /* HeatMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FAAE7E0C19E6F483007F2E87 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FAAE7E2F19E6FF2A007F2E87 /* Profile.m in Sources */,
-				FAAE7E1319E6F483007F2E87 /* main.m in Sources */,
-				FAAE7E1A19E6F4AC007F2E87 /* KeyLogger.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		FAAE7E2A19E6FE97007F2E87 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FAAE7E0F19E6F483007F2E87 /* HeatKeyDaemon */;
-			targetProxy = FAAE7E2919E6FE97007F2E87 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */ = {
@@ -379,26 +277,6 @@
 			};
 			name = Release;
 		};
-		FAAE7E1519E6F483007F2E87 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.9;
-			};
-			name = Debug;
-		};
-		FAAE7E1619E6F483007F2E87 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = macosx10.9;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,15 +294,6 @@
 			buildConfigurations = (
 				FAAE7DFE19E6D6C7007F2E87 /* Debug */,
 				FAAE7DFF19E6D6C7007F2E87 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		FAAE7E1419E6F483007F2E87 /* Build configuration list for PBXNativeTarget "HeatKeyDaemon" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FAAE7E1519E6F483007F2E87 /* Debug */,
-				FAAE7E1619E6F483007F2E87 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

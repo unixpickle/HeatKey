@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSMutableArray * profiles;
 @property (nonatomic, strong) Profile * recording;
-@property (nonatomic, strong) id<DaemonService> daemonService;
+@property (nonatomic, strong) KeyLogger * keyLogger;
 
 - (void)showProfileInfo;
 - (void)hideProfileInfo;
@@ -41,6 +41,8 @@
     } else {
       self.profiles = [[NSMutableArray alloc] init];
     }
+    self.keyLogger = [[KeyLogger alloc] init];
+    self.keyLogger.delegate = self;
   }
   return self;
 }
@@ -257,22 +259,15 @@
 }
 
 - (void)startRecording {
-  if (!self.daemonService) {
-    self.daemonService = LaunchDaemonService();
-    if (!self.daemonService) {
-      NSRunAlertPanel(@"Error", @"Failed to launch keyboard logger.",
-                      @"OK", nil, nil);
-      return;
-    }
-    [self.daemonService setDelegate:self];
+  if (![self.keyLogger start]) {
+    return;
   }
-  [self.daemonService start];
   self.recording = self.currentProfile;
   self.recordButton.title = @"Stop Recording";
 }
 
 - (void)stopRecording {
-  [self.daemonService stop];
+  [self.keyLogger stop];
   if (self.recording == self.currentProfile) {
     self.recordButton.title = @"Start Recording";
   }
@@ -280,7 +275,7 @@
   [self save];
 }
 
-#pragma mark - Daemon -
+#pragma mark - KeyLogger -
 
 - (void)keyPressed:(int)key modifiers:(int)modifiers {
   if (!self.recording) return;
@@ -288,10 +283,6 @@
   if (self.recording == self.currentProfile) {
     [self.heatMapView setNeedsDisplay:YES];
   }
-}
-
-- (BOOL)ping {
-  return YES;
 }
 
 #pragma mark - Saving -

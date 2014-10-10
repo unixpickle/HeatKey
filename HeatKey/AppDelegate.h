@@ -33,6 +33,8 @@
 - (IBAction)removePressed:(id)sender;
 - (IBAction)modifierCheckboxChanged:(id)sender;
 - (IBAction)recordPressed:(id)sender;
+- (IBAction)exportProfile:(id)sender;
+- (IBAction)importProfile:(id)sender;
 
 @end
 

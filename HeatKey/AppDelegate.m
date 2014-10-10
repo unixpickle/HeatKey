@@ -106,6 +106,56 @@
   }
 }
 
+- (IBAction)exportProfile:(id)sender {
+  if (!self.currentProfile) {
+    NSRunAlertPanel(@"No Profile Selected",
+                    @"You must select a profile to export.", @"OK", nil, nil);
+    return;
+  }
+  // Export the current profile as a coded object
+  NSSavePanel * savePanel = [NSSavePanel savePanel];
+  savePanel.allowedFileTypes = @[@"heatkey"];
+  [savePanel beginSheetModalForWindow:self.window
+                    completionHandler:^(NSInteger result){
+    if (result != NSFileHandlingPanelOKButton) {
+      return;
+    }
+    [savePanel orderOut:self];
+    NSString * path = savePanel.URL.path;
+    if (self.currentProfile) {
+      [NSKeyedArchiver archiveRootObject:self.currentProfile toFile:path];
+    } else {
+      NSRunAlertPanel(@"Uh oh",
+                      @"Somehow, the current profile got deselected.", @"OK",
+                      nil, nil);
+    }
+  }];
+}
+
+- (IBAction)importProfile:(id)sender {
+  NSOpenPanel * panel = [NSOpenPanel openPanel];
+  panel.allowedFileTypes = @[@"heatkey"];
+  [panel beginSheetModalForWindow:self.window
+                completionHandler:^(NSInteger result) {
+    if (result != NSFileHandlingPanelOKButton) {
+      return;
+    }
+    [panel orderOut:self];
+    NSString * path = panel.URL.path;
+    Profile * p = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    if (p) {
+      [self.profiles addObject:p];
+      NSIndexSet * index = [NSIndexSet indexSetWithIndex:
+                            self.profiles.count - 1];
+      [self.tableView selectRowIndexes:index byExtendingSelection:NO];
+      [self.tableView reloadData];
+    } else {
+      NSRunAlertPanel(@"Invalid Data", @"Cannot decode the given profile.",
+                      @"OK", nil, nil);
+    }
+  }];
+}
+
 #pragma mark - Profile Info Views -
 
 - (void)showProfileInfo {

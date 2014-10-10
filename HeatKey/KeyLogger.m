@@ -27,6 +27,8 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
   if (!AXIsProcessTrustedWithOptions(options)) {
     return NO;
   }
+  
+  // Create a new event tap if we don't have one already
   if (!eventTap) {
     eventTap = CGEventTapCreate(kCGHIDEventTap, kCGHeadInsertEventTap,
                                 kCGEventTapOptionDefault,
@@ -40,6 +42,7 @@ static CGEventRef _EventCallback(CGEventTapProxy proxy, CGEventType type,
     CFRunLoopAddSource(CFRunLoopGetMain(), runLoopSource,
                        kCFRunLoopCommonModes);
   }
+  
   CGEventTapEnable(eventTap, true);
   return YES;
 }

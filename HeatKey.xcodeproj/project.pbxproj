@@ -14,6 +14,9 @@
 		FAAE7E0B19E6E4CF007F2E87 /* HeatMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */; };
 		FABADDB719E8778500DBC72A /* KeyLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = FABADDB619E8778500DBC72A /* KeyLogger.m */; };
 		FABADDBA19E877E500DBC72A /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = FABADDB919E877E500DBC72A /* Profile.m */; };
+		FABADDBC19E8803C00DBC72A /* heatkey.icns in Resources */ = {isa = PBXBuildFile; fileRef = FABADDBB19E8803C00DBC72A /* heatkey.icns */; };
+		FABADDBF19E8873A00DBC72A /* HeatMapLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FABADDBE19E8873A00DBC72A /* HeatMapLayout.m */; };
+		FABADDC219E8875F00DBC72A /* HeatMapKey.m in Sources */ = {isa = PBXBuildFile; fileRef = FABADDC119E8875F00DBC72A /* HeatMapKey.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,11 @@
 		FABADDB619E8778500DBC72A /* KeyLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyLogger.m; sourceTree = "<group>"; };
 		FABADDB819E877E500DBC72A /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
 		FABADDB919E877E500DBC72A /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
+		FABADDBB19E8803C00DBC72A /* heatkey.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = heatkey.icns; sourceTree = "<group>"; };
+		FABADDBD19E8873A00DBC72A /* HeatMapLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeatMapLayout.h; sourceTree = "<group>"; };
+		FABADDBE19E8873A00DBC72A /* HeatMapLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeatMapLayout.m; sourceTree = "<group>"; };
+		FABADDC019E8875F00DBC72A /* HeatMapKey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeatMapKey.h; sourceTree = "<group>"; };
+		FABADDC119E8875F00DBC72A /* HeatMapKey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeatMapKey.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +76,10 @@
 				FAAE7DEC19E6D6C7007F2E87 /* MainMenu.xib */,
 				FAAE7E0919E6E4CF007F2E87 /* HeatMapView.h */,
 				FAAE7E0A19E6E4CF007F2E87 /* HeatMapView.m */,
+				FABADDBD19E8873A00DBC72A /* HeatMapLayout.h */,
+				FABADDBE19E8873A00DBC72A /* HeatMapLayout.m */,
+				FABADDC019E8875F00DBC72A /* HeatMapKey.h */,
+				FABADDC119E8875F00DBC72A /* HeatMapKey.m */,
 				FABADDB519E8778500DBC72A /* KeyLogger.h */,
 				FABADDB619E8778500DBC72A /* KeyLogger.m */,
 				FABADDB819E877E500DBC72A /* Profile.h */,
@@ -80,6 +92,7 @@
 		FAAE7DE319E6D6C7007F2E87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FABADDBB19E8803C00DBC72A /* heatkey.icns */,
 				FAAE7DE419E6D6C7007F2E87 /* Info.plist */,
 				FAAE7DE819E6D6C7007F2E87 /* main.m */,
 			);
@@ -143,6 +156,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABADDBC19E8803C00DBC72A /* heatkey.icns in Resources */,
 				FAAE7DEB19E6D6C7007F2E87 /* Images.xcassets in Resources */,
 				FAAE7DEE19E6D6C7007F2E87 /* MainMenu.xib in Resources */,
 			);
@@ -157,8 +171,10 @@
 			files = (
 				FAAE7DE919E6D6C7007F2E87 /* main.m in Sources */,
 				FABADDBA19E877E500DBC72A /* Profile.m in Sources */,
+				FABADDBF19E8873A00DBC72A /* HeatMapLayout.m in Sources */,
 				FABADDB719E8778500DBC72A /* KeyLogger.m in Sources */,
 				FAAE7DE719E6D6C7007F2E87 /* AppDelegate.m in Sources */,
+				FABADDC219E8875F00DBC72A /* HeatMapKey.m in Sources */,
 				FAAE7E0B19E6E4CF007F2E87 /* HeatMapView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

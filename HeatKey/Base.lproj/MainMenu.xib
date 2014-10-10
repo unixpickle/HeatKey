@@ -642,7 +642,7 @@
             <rect key="contentRect" x="335" y="390" width="595" height="405"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
             <value key="minSize" type="size" width="595" height="405"/>
-            <view key="contentView" id="EiT-Mj-1SZ">
+            <view key="contentView" wantsLayer="YES" id="EiT-Mj-1SZ">
                 <rect key="frame" x="0.0" y="0.0" width="595" height="405"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -781,7 +781,7 @@
                             <action selector="modifierCheckboxChanged:" target="Voe-Tx-rLC" id="kLD-gE-gQM"/>
                         </connections>
                     </button>
-                    <customView translatesAutoresizingMaskIntoConstraints="NO" id="O6e-Hj-TNW" customClass="HeatMapView">
+                    <customView wantsLayer="YES" translatesAutoresizingMaskIntoConstraints="NO" id="O6e-Hj-TNW" customClass="HeatMapView">
                         <rect key="frame" x="214" y="83" width="361" height="277"/>
                     </customView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PBj-pW-7wK">
@@ -855,7 +855,7 @@
                     <constraint firstAttribute="trailing" secondItem="PBj-pW-7wK" secondAttribute="trailing" constant="20" id="xsv-d8-RQv"/>
                 </constraints>
             </view>
-            <point key="canvasLocation" x="209.5" y="-6.5"/>
+            <point key="canvasLocation" x="291.5" y="50.5"/>
         </window>
     </objects>
 </document>

@@ -8,11 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Profile.h"
+#import "HeatMapLayout.h"
 
 @interface HeatMapView : NSView
 
 @property (nonatomic, strong) Profile * profile;
+@property (nonatomic, strong) HeatMapLayout * mapLayout;
 @property (readwrite) int modifiers;
-@property (readwrite) BOOL showSpaceBar;
 
 @end

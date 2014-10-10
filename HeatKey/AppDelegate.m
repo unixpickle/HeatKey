@@ -87,7 +87,7 @@
   BOOL command = (self.commandCheck.state != 0);
   BOOL option = (self.optionCheck.state != 0);
   BOOL control = (self.controlCheck.state != 0);
-  self.heatMapView.showSpaceBar = (self.spaceCheck.state != 0);
+  self.heatMapView.mapLayout.showSpaceBar = (self.spaceCheck.state != 0);
   self.heatMapView.modifiers = [Profile modifiersMaskWithShift:shift
                                                        command:command
                                                         option:option

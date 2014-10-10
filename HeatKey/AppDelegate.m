@@ -251,10 +251,19 @@
       NSApplicationSupportDirectory, NSLocalDomainMask, YES);
   NSString * appSupport = [NSHomeDirectory() stringByAppendingPathComponent:
                            dirs[0]];
-  return [appSupport stringByAppendingPathComponent:@"profiles"];
+  NSString * thisApp = [appSupport stringByAppendingPathComponent:@"HeatKey"];
+  return [thisApp stringByAppendingPathComponent:@"profiles"];
 }
 
 - (void)save {
+  NSString * path = [self savedDataPath];
+  NSString * directory = [path stringByDeletingLastPathComponent];
+  if (![[NSFileManager defaultManager] fileExistsAtPath:directory]) {
+    [[NSFileManager defaultManager] createDirectoryAtPath:directory
+                              withIntermediateDirectories:NO
+                                               attributes:nil
+                                                    error:nil];
+  }
   [NSKeyedArchiver archiveRootObject:self.profiles toFile:[self savedDataPath]];
 }
 

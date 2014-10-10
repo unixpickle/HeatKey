@@ -82,7 +82,7 @@
       CGFloat width = [key widthForSpaceSize:self.spaceSize];
       key.frame = NSMakeRect(round(point.x), round(point.y), round(width),
                              round(self.spaceSize * 4));
-      point.x += key.frame.size.width + self.spaceSize;
+      point.x += width + self.spaceSize;
     }
     point.x = startPoint.x;
     point.y += self.spaceSize * 5;

@@ -74,7 +74,10 @@
 }
 
 - (void)drawKey:(HeatMapKey *)key {
-  NSBezierPath * bezier = [NSBezierPath bezierPathWithRoundedRect:key.frame
+  NSRect frame = key.frame;
+  frame.origin.x -= 0.5;
+  frame.origin.y -= 0.5;
+  NSBezierPath * bezier = [NSBezierPath bezierPathWithRoundedRect:frame
                                                           xRadius:3.0
                                                           yRadius:3.0];
   if (key.visible && !key.ignoreValue) {
@@ -89,12 +92,14 @@
                      green:(1.0 - heat)
                       blue:(1.0 - heat)
                      alpha:1.0] set];
-    [[NSColor blackColor] setStroke];
     [bezier fill];
-    [bezier stroke];
   } else if (key.visible) {
     [[NSColor grayColor] setFill];
     [bezier fill];
+  }
+  if (key.visible) {
+    [[NSColor blackColor] setStroke];
+    [bezier stroke];
   }
 }
 
